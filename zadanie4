@@ -1,0 +1,34 @@
+using System;
+using System.Collections;
+
+namespace zadanie4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            ArrayList obj = new ArrayList() {66,45, 3.6,"y",7,"i","S","J",687,11,"m","n",555,195,0};
+            ArrayList objUpper = new ArrayList(100);
+
+            for (int i = 0; i < obj.Count; i++)
+            {
+                Console.Write(obj[i] + " | ");
+            }
+            Console.WriteLine();
+
+            for (int i = 0; i < obj.Count; i++)
+            {
+                if (obj[i] is string)
+                {
+                    obj.RemoveAt(i);
+                    if (obj[i] is string) i--;
+                }
+            }
+
+            for (int i = 0; i < obj.Count; i++)
+            {
+                Console.Write(obj[i] + " | ");
+            }
+        }
+    }
+}
